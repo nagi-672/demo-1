@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Example</title>
+</head>
+<body>
+    <h1>Data from Backend:</h1>
+    <button onclick="fetchData()">Get Data</button>
+    <p id="output"></p>
+
+    <script>
+        async function fetchData() {
+            const response = await fetch("http://localhost:5000/api/data");
+            const data = await response.json();
+            document.getElementById("output").innerText = JSON.stringify(data);
+        }
+    </script>
+</body>
+</html>
